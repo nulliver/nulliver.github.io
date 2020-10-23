@@ -1,144 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://nulliver.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://nulliver.github.io/" rel="alternate" type="text/html" /><updated>2020-05-20T21:14:46-05:00</updated><id>https://nulliver.github.io/feed.xml</id><title type="html">Nulliver</title><subtitle>My own little blog</subtitle><author><name>Nulliver</name><email>me@nulliver.dev</email></author><entry><title type="html">Rust’s Owners</title><link href="https://nulliver.github.io/2020-05-20/rust-owners" rel="alternate" type="text/html" title="Rust's Owners" /><published>2020-05-20T00:00:00-05:00</published><updated>2020-05-20T00:00:00-05:00</updated><id>https://nulliver.github.io/2020-05-20/rust-owners</id><content type="html" xml:base="https://nulliver.github.io/2020-05-20/rust-owners">&lt;p&gt;Programming languages need to define a way to manage memory (even if it’s manual) and Rust is not the exception. The way Rust decided to approach this is through the concept of &lt;strong&gt;ownership&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://nulliver.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://nulliver.github.io/" rel="alternate" type="text/html" /><updated>2020-10-23T09:00:27-05:00</updated><id>https://nulliver.github.io/feed.xml</id><title type="html">Nulliver</title><subtitle>My own little blog</subtitle><author><name>Nulliver</name><email>me@nulliver.dev</email></author><entry><title type="html">Frist Post</title><link href="https://nulliver.github.io/2020-10-22/first-post" rel="alternate" type="text/html" title="Frist Post" /><published>2020-10-22T00:00:00-05:00</published><updated>2020-10-22T00:00:00-05:00</updated><id>https://nulliver.github.io/2020-10-22/first-post</id><content type="html" xml:base="https://nulliver.github.io/2020-10-22/first-post">&lt;p&gt;This is my first blog post to test this blog.&lt;/p&gt;
 
-&lt;p&gt;There are two places in memory where a Rust program can store data: The &lt;strong&gt;Stack&lt;/strong&gt; and &lt;strong&gt;The Heap&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now, since I don’t have anything to say right now, I’ll use the following two paragraphs to let slipsum talk.&lt;/p&gt;
 
-&lt;p&gt;To simplify, I’ll say that The Stack is for small amounts of data that can be accessed really fast. Most languages handle this pretty straight forward, you usually don’t even have to think about it but the most interesting part is how each language handles the data stored in The Heap.&lt;/p&gt;
+&lt;p&gt;Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I’m in a transitional period so I don’t wanna kill you, I wanna help you. But I can’t give you this case, it don’t belong to me. Besides, I’ve already been through too much shit this morning over this case to hand it over to your dumb ass.&lt;/p&gt;
 
-&lt;p&gt;The Heap is the space in memory where the most complex data is stored. The way Rust handle this is by binding the variable to the memory location where data is in The Heap.&lt;/p&gt;
+&lt;p&gt;You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don’t know exactly when we turned on each other, but I know that seven of us survived the slide… and only five made it out. Now we took an oath, that I’m breaking now. We said we’d say it was the snow that killed the other two, but it wasn’t. Nature is lethal but it doesn’t hold a candle to man.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;A more complex object in The Heap&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;And here is how code looks like:&lt;/p&gt;
 
-&lt;p&gt;In the code above, the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; is bound to the string data &lt;em&gt;“A more complex object in The Heap”&lt;/em&gt;. A string is data complex enough that it needs to be stored in The Heap. At this point &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; becomes the owner of that string. If &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; goes out of scope then the memory is (in Rust terms) “&lt;em&gt;dropped&lt;/em&gt;”, which means that we cannot longer reach that string through the &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; variable and that particular memory location is now available to be used by other code or programs.&lt;/p&gt;
-
-&lt;p&gt;Now let’s consider the following scenario:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (A)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;A more complex object in The Heap&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (B)&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (C)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;data2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (D)&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;// (D.1) This following line is an error, data1 is now invalid&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;//println!(&quot;{}&quot;, data1);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;// (D.2) This is also an error, data1 is now out of scope&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;//println!(&quot;{}&quot;, data1);&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (E)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In the code above &lt;code class=&quot;highlighter-rouge&quot;&gt;data2&lt;/code&gt; is declared at (A) and after that, inside a block, &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; is declared and bound to some string data in (B). In the next line (C) the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; is printed to the standard output and then we bound &lt;code class=&quot;highlighter-rouge&quot;&gt;data2&lt;/code&gt; to the same string &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; is bound to (D). We have to understand that we didn’t make a copy of the string &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; is bound to, instead we now have the &lt;code class=&quot;highlighter-rouge&quot;&gt;data2&lt;/code&gt; variable bound to the same string &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; was prerviously bound to ( &lt;em&gt;“A more complex object in The Heap”&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;After the block is closed, &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; is out of scope, we no longer have access to the string using &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; but we can continue accessing that string using &lt;code class=&quot;highlighter-rouge&quot;&gt;data2&lt;/code&gt; (E). In fact, &lt;code class=&quot;highlighter-rouge&quot;&gt;data2&lt;/code&gt; became the owner of that string not after &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; went out of scope but when we did the assignment of &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;data2&lt;/code&gt; in (D). This is known as a &lt;strong&gt;move&lt;/strong&gt; in Rust terms because we’re moving the ownership from &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;data2&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Even at (D.1) when &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; was still in scope, we couldn’t use it becase Rust invalidated it since we moved the ownership to &lt;code class=&quot;highlighter-rouge&quot;&gt;data2&lt;/code&gt;. Once we do an assignment, we’re changing the owner and the previous owner is invalidated.&lt;/p&gt;
-
-&lt;p&gt;A move also occurs when passing a variable to a function or returning it from a function.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;first_owner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (A)&lt;/span&gt;
-	&lt;span class=&quot;nf&quot;&gt;second_owner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (D)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-
-&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;first_owner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;New Data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (B)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;new_data&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (C)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;second_owner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;more_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;// do something with more_data&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In (A) we called the &lt;code class=&quot;highlighter-rouge&quot;&gt;first_owner()&lt;/code&gt; function, inside that function we bound the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;new_data&lt;/code&gt; to a string (B). At this point the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;new_data&lt;/code&gt; is the owner of that string but in the next line (C) we moved the owner to the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; by returning the string from the function.&lt;/p&gt;
-
-&lt;p&gt;In (D) we again moved the owner to inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;second_owner()&lt;/code&gt; function by passing the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; to the function.&lt;/p&gt;
-
-&lt;p&gt;But what if we don’t want to “move” the owner and we really want to make a copy of the data? we use the &lt;code class=&quot;highlighter-rouge&quot;&gt;clone()&lt;/code&gt; method:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;A more complex object in The Heap&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.clone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This way, we get two variables bound to its own copy of the data.&lt;/p&gt;
-
-&lt;p&gt;Now, what if instead of moving or copying the data we want to use it inside a function just for a quick operation? what if we don’t really want to “move” the ownership to some variable inside the function?.&lt;/p&gt;
-
-&lt;p&gt;In that case, there’s a concept called “borrowing”, it works like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Borrowing data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (A)&lt;/span&gt;
-	&lt;span class=&quot;nf&quot;&gt;borrow_for_a_second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// (B)&lt;/span&gt;
-	&lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;We still can use data1 = {}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-
-&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;borrow_for_a_second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;borrowed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;borrow&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;String is {} long&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In (A) we bound &lt;code class=&quot;highlighter-rouge&quot;&gt;data1&lt;/code&gt; to a new string and in (B) we pass that to the function &lt;code class=&quot;highlighter-rouge&quot;&gt;borrow_for_a_second()&lt;/code&gt; but we’re not moving the ownership of the data. By using &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;String&lt;/code&gt; as the data type we’re telling Rust that we just want to reference the data for a moment and that we don’t want to take ownership of the data. After we use the data, we don’t have to “move the ownership back” outside the function because we never took ownership of it.&lt;/p&gt;
-
-&lt;p&gt;Note that in the function we cannot modify the data, we can only read it. If we want to modify the data through the reference, we have to annotate it with &lt;code class=&quot;highlighter-rouge&quot;&gt;mut&lt;/code&gt; like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;borrow_for_a_second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;borrowed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;borrow&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.push_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; and modifying it.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;We are now modifying the string by using a mutable reference, we are not the owners but we &lt;em&gt;borrow&lt;/em&gt; the data to modify it. Think in this as borrowing a notebook from a friend to take some notes during a class, you use a couple of pages before returning it to your friend, you modified your friend’s notebook but you are not the owner.&lt;/p&gt;
-
-&lt;p&gt;In conlusion, the rule is that we can have any number of immutable references as long as we don’t have a mutable reference. If we want a mutable reference then we cannot have any immutable references.&lt;/p&gt;</content><author><name>Nulliver</name></author><summary type="html">Programming languages need to define a way to manage memory (even if it’s manual) and Rust is not the exception. The way Rust decided to approach this is through the concept of ownership.</summary></entry><entry><title type="html">Constants and immutability</title><link href="https://nulliver.github.io/2020-05-19/constants-and-immutability" rel="alternate" type="text/html" title="Constants and immutability" /><published>2020-05-19T00:00:00-05:00</published><updated>2020-05-19T00:00:00-05:00</updated><id>https://nulliver.github.io/2020-05-19/constants-and-immutability</id><content type="html" xml:base="https://nulliver.github.io/2020-05-19/constants-and-immutability">&lt;p&gt;Yesterday I mentioned that in Rust variables are immutable by default.&lt;/p&gt;
-
-&lt;p&gt;So the next question is “Does Rust have constants? if so, what role do they play?”&lt;/p&gt;
-
-&lt;p&gt;Yes, Rust has constants and they can be declared like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NEVER_CHANGE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;u32&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The differences between constants and variables go beyond immutability:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Variables are immutable by default but they can become mutable by annotatting them with the &lt;em&gt;mut&lt;/em&gt; keyword. Constants are &lt;strong&gt;always&lt;/strong&gt; immutable, you cannot annotate a constant with &lt;em&gt;mut&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;You declare constants using the &lt;em&gt;const&lt;/em&gt; keyword.&lt;/li&gt;
-  &lt;li&gt;Constants must be annotated with a type (u32 in the example above).&lt;/li&gt;
-  &lt;li&gt;Constants can be declared in any scope, including the global scope.&lt;/li&gt;
-  &lt;li&gt;The value of the constant must come from a constant expression, it cannot come from a computation determined at runtime.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;By convention, constant are declared using all uppercase letters and underscores to separate words, the compiler won’t complain if you use a different convention but other &lt;em&gt;Rustaceans&lt;/em&gt; will (“Rustaceans” is a silly name Rust developers call themselves).&lt;/p&gt;</content><author><name>Nulliver</name></author><summary type="html">Yesterday I mentioned that in Rust variables are immutable by default.</summary></entry><entry><title type="html">Immutability by default</title><link href="https://nulliver.github.io/2020-05-18/immutability-by-default" rel="alternate" type="text/html" title="Immutability by default" /><published>2020-05-18T00:00:00-05:00</published><updated>2020-05-18T00:00:00-05:00</updated><id>https://nulliver.github.io/2020-05-18/immutability-by-default</id><content type="html" xml:base="https://nulliver.github.io/2020-05-18/immutability-by-default">&lt;p&gt;In Rust, variables are immutable by default.&lt;/p&gt;
-
-&lt;p&gt;This means that the most common way to declare a variable makes it immutable which is a good thing because you won’t change a variable without consciously knowing that you’re changing that variable.&lt;/p&gt;
-
-&lt;p&gt;If you declare the following variable:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;you cannot change it without getting an error from the compiler:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;n&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;55&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// the compiler is going to complain about this&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;So at this point the compiler forces you to ask yourself “do I really want to change this variable or am I making a mistake?”. To make the variable mutable you have to go back to the declaration and add the annotation &lt;em&gt;mut&lt;/em&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;I’ve seen similar rules in other modern languages like Swift and Kotlin and I think it’s becoming the norm because it really help us to detect or avoid errors as early as possible.&lt;/p&gt;</content><author><name>Nulliver</name></author><summary type="html">In Rust, variables are immutable by default.</summary></entry><entry><title type="html">The Basics</title><link href="https://nulliver.github.io/2020-05-16/the-basics" rel="alternate" type="text/html" title="The Basics" /><published>2020-05-16T00:00:00-05:00</published><updated>2020-05-16T00:00:00-05:00</updated><id>https://nulliver.github.io/2020-05-16/the-basics</id><content type="html" xml:base="https://nulliver.github.io/2020-05-16/the-basics">&lt;p&gt;I’m still learning the basics of Rust.&lt;/p&gt;
-
-&lt;p&gt;I’m using the offical book to learn Rust, the description of the book in the website at the moment is this:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Affectionately nicknamed “the book,” The Rust Programming Language will give you an overview of the language from first principles. You’ll build a few projects along the way, and by the end, you’ll have a solid grasp of the language.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;It’s a big book but I like it so far. It seems to be a mix of theory and practice which is great. You get a sense of the language as early as in chapter two when you develop a simple guess game that demonstrate some of the language’s concepts like immutability and error handling.&lt;/p&gt;
-
-&lt;p&gt;Chapter three seems to be the basics of the language which is similar to other language so it may be a quick read.&lt;/p&gt;</content><author><name>Nulliver</name></author><summary type="html">I’m still learning the basics of Rust.</summary></entry><entry><title type="html">Learning Rust</title><link href="https://nulliver.github.io/2020-05-14/learning-rust" rel="alternate" type="text/html" title="Learning Rust" /><published>2020-05-14T00:00:00-05:00</published><updated>2020-05-14T00:00:00-05:00</updated><id>https://nulliver.github.io/2020-05-14/learning-rust</id><content type="html" xml:base="https://nulliver.github.io/2020-05-14/learning-rust">&lt;p&gt;I’m starting to learn Rust.&lt;/p&gt;
-
-&lt;p&gt;I currently don’t have any specific use in mind for Rust, I just like to learn and Rust is a language that is in a different part of the spectrum from what I’m used to.&lt;/p&gt;
-
-&lt;p&gt;It promises the speed of C and C++ without all their &lt;em&gt;vices&lt;/em&gt; so that sounds attractive, isn’t?&lt;/p&gt;
-
-&lt;p&gt;I plan to document my journey on this blog.&lt;/p&gt;
-
-&lt;p&gt;So here’s my first Rust program :)&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Nulliver</name></author><summary type="html">I’m starting to learn Rust.</summary></entry></feed>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HelloWorld&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Nulliver</name></author><summary type="html">This is my first blog post to test this blog.</summary></entry></feed>
